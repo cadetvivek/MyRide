@@ -5,9 +5,14 @@ const driverMatcher = require('../utils/driverMatcher');
 exports.bookRide = async (req, res) => {
     try {
         const { pickup, dropoff } = req.body;
-        const driver = await driverMatcher(pickup);
-        if (!driver) return res.status(404).send("No available drivers");
+        
+        // Validate pickup and dropoff locations
+        if (!pickup || !dropoff || !pickup.lat || !pickup.lng || !dropoff.lat || !dropoff.lng) {
+            return res.status(400).json({ error: 'Invalid pickup or dropoff locations' });
+        }
 
+        const driver = await driverMatcher(pickup);
+        
         const distance = Math.sqrt(
             Math.pow(pickup.lat - dropoff.lat, 2) + Math.pow(pickup.lng - dropoff.lng, 2)
         );
@@ -18,15 +23,17 @@ exports.bookRide = async (req, res) => {
             driver: driver._id,
             pickup,
             dropoff,
-            fare
+            fare,
+            status: 'Pending'
         });
 
         driver.isAvailable = false;
         await driver.save();
 
-        res.status(201).send(ride);
+        res.status(201).json(ride);
     } catch (err) {
-        res.status(500).send(err.message);
+        // Send specific error messages to the client
+        res.status(404).json({ error: err.message });
     }
 };
 

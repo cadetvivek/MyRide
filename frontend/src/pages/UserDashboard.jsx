@@ -167,7 +167,15 @@ const UserDashboard = () => {
       setCurrentRide(response.data);
       setLoading(false);
     } catch (error) {
-      setBookingError(error.response?.data || 'Failed to book ride');
+      // Handle specific error messages from the backend
+      const errorMessage = error.response?.data?.error || 'Failed to book ride';
+      setBookingError(errorMessage);
+      
+      // If the error is about no drivers, show a more user-friendly message
+      if (errorMessage.includes('No drivers') || errorMessage.includes('busy')) {
+        setBookingError('No drivers are currently available. Please try again in a few minutes.');
+      }
+      
       setLoading(false);
     }
   };
