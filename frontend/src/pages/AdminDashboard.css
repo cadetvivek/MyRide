@@ -2,7 +2,7 @@
 /* Modern Admin Dashboard styling with animations and responsive design */
 
 /* Global Styles & Variables */
-:root {
+ :root {
     --primary: #3f51b5;
     --primary-light: #757de8;
     --primary-dark: #002984;
@@ -10,8 +10,8 @@
     --success: #4caf50;
     --warning: #ff9800;
     --error: #f44336;
-    --gray-light: #f5f5f5;
-    --gray: #e0e0e0;
+    /* --gray-light: #f5f5f5;
+    --gray: #e0e0e0; */
     --gray-dark: #757575;
     --text-primary: #212121;
     --text-secondary: #757575;
@@ -20,7 +20,7 @@
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.14);
     --transition: all 0.3s ease;
     --border-radius: 8px;
-  }
+  } 
   
   /* Base layout */
   

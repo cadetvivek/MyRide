@@ -65,14 +65,14 @@ const Home = () => {
   const getStartedButton = () => {
     if (!currentUser) {
       return (
-        <Box sx={{ mt: 4, display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+        <Box className="cta-buttons">
           <Button 
             component={Link} 
             to="/register" 
             variant="contained" 
             size="large" 
             color="primary"
-            sx={{ px: 4, py: 1 }}
+            className="primary-btn"
           >
             Sign Up Now
           </Button>
@@ -81,7 +81,7 @@ const Home = () => {
             to="/login" 
             variant="outlined" 
             size="large"
-            sx={{ px: 4, py: 1 }}
+            className="secondary-btn"
           >
             Login
           </Button>
@@ -93,14 +93,14 @@ const Home = () => {
       if (currentUser.role === 'Admin') dashboardLink = '/admin-dashboard';
       
       return (
-        <Box sx={{ mt: 4, display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' } }}>
+        <Box className="cta-buttons">
           <Button 
             component={Link} 
             to={dashboardLink} 
             variant="contained" 
             size="large" 
             color="primary"
-            sx={{ px: 4, py: 1 }}
+            className="primary-btn"
           >
             Go to Dashboard
           </Button>
@@ -116,10 +116,10 @@ const Home = () => {
         <Container>
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
-              <Typography variant="h2" component="h1" gutterBottom fontWeight="bold">
+              <Typography variant="h2" component="h1" gutterBottom className="hero-title">
                 Ride Smart, Ride Green with <span className="text-primary">MyRide</span>
               </Typography>
-              <Typography variant="h5" component="div" color="text.secondary" paragraph>
+              <Typography variant="h5" component="div" className="hero-subtitle">
                 Book a bike ride in seconds, get picked up in minutes, and enjoy an eco-friendly journey to your destination.
               </Typography>
               {getStartedButton()}
@@ -144,11 +144,11 @@ const Home = () => {
       {/* Features Section */}
       <Box className="features-section">
         <Container>
-          <Box textAlign="center" mb={8}>
-            <Typography variant="h3" component="h2" gutterBottom fontWeight="bold">
+          <Box className="section-header">
+            <Typography variant="h3" component="h2" className="section-title">
               Why Choose MyRide?
             </Typography>
-            <Typography variant="h6" component="div" color="text.secondary" maxWidth="800px" mx="auto">
+            <Typography variant="h6" component="div" className="section-subtitle">
               Experience the perfect blend of convenience, affordability, and eco-friendly transportation
             </Typography>
           </Box>
@@ -156,15 +156,15 @@ const Home = () => {
           <Grid container spacing={4}>
             {features.map((feature, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card className="feature-card" elevation={2}>
-                  <CardContent sx={{ textAlign: 'center', py: 4 }}>
-                    <Box className="feature-icon" mb={2}>
+                <Card className="feature-card">
+                  <CardContent className="feature-content">
+                    <Box className="feature-icon">
                       {feature.icon}
                     </Box>
-                    <Typography variant="h5" component="h3" gutterBottom fontWeight="bold">
+                    <Typography variant="h5" component="h3" className="feature-title">
                       {feature.title}
                     </Typography>
-                    <Typography variant="body1" color="text.secondary">
+                    <Typography variant="body1" className="feature-description">
                       {feature.description}
                     </Typography>
                   </CardContent>
@@ -178,59 +178,59 @@ const Home = () => {
       {/* How It Works Section */}
       <Box className="how-it-works-section">
         <Container>
-          <Box textAlign="center" mb={8}>
-            <Typography variant="h3" component="h2" gutterBottom fontWeight="bold">
+          <Box className="section-header">
+            <Typography variant="h3" component="h2" className="section-title">
               How It Works
             </Typography>
-            <Typography variant="h6" component="div" color="text.secondary" maxWidth="800px" mx="auto">
+            <Typography variant="h6" component="div" className="section-subtitle">
               Start riding in three simple steps
             </Typography>
           </Box>
 
           <Grid container spacing={4} justifyContent="center">
             <Grid item xs={12} sm={4}>
-              <Box className="step-box" textAlign="center">
+              <Box className="step-box">
                 <Box className="step-number">1</Box>
-                <Typography variant="h5" component="h3" gutterBottom fontWeight="bold" mt={2}>
+                <Typography variant="h5" component="h3" className="step-title">
                   Book Your Ride
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" className="step-description">
                   Enter your destination, select a bike type, and confirm your booking.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Box className="step-box" textAlign="center">
+              <Box className="step-box">
                 <Box className="step-number">2</Box>
-                <Typography variant="h5" component="h3" gutterBottom fontWeight="bold" mt={2}>
+                <Typography variant="h5" component="h3" className="step-title">
                   Meet Your Driver
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" className="step-description">
                   Your assigned driver will arrive at your location with your bike.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Box className="step-box" textAlign="center">
+              <Box className="step-box">
                 <Box className="step-number">3</Box>
-                <Typography variant="h5" component="h3" gutterBottom fontWeight="bold" mt={2}>
+                <Typography variant="h5" component="h3" className="step-title">
                   Enjoy Your Journey
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" className="step-description">
                   Ride to your destination with ease and pay automatically through the app.
                 </Typography>
               </Box>
             </Grid>
           </Grid>
 
-          <Box textAlign="center" mt={5}>
+          <Box className="section-cta">
             <Button 
               component={Link} 
               to="/register" 
               variant="contained" 
               size="large" 
               color="primary"
-              sx={{ px: 4, py: 1.5 }}
+              className="cta-button"
             >
               Get Started Now
             </Button>
@@ -241,11 +241,11 @@ const Home = () => {
       {/* Testimonials Section */}
       <Box className="testimonials-section">
         <Container>
-          <Box textAlign="center" mb={8}>
-            <Typography variant="h3" component="h2" gutterBottom fontWeight="bold">
+          <Box className="section-header">
+            <Typography variant="h3" component="h2" className="section-title">
               What Our Users Say
             </Typography>
-            <Typography variant="h6" component="div" color="text.secondary" maxWidth="800px" mx="auto">
+            <Typography variant="h6" component="div" className="section-subtitle">
               Discover why thousands choose MyRide every day
             </Typography>
           </Box>
@@ -253,29 +253,29 @@ const Home = () => {
           <Grid container spacing={4}>
             {testimonials.map((testimonial, index) => (
               <Grid item xs={12} md={4} key={index}>
-                <Paper className="testimonial-card" elevation={2}>
-                  <Box sx={{ p: 3 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                <Paper className="testimonial-card">
+                  <Box className="testimonial-content">
+                    <Box className="testimonial-header">
                       <Avatar 
                         src={testimonial.avatar} 
                         alt={testimonial.name}
-                        sx={{ width: 60, height: 60 }}
+                        className="testimonial-avatar"
                         onError={(e) => {
                           e.target.onerror = null;
                           e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=random`;
                         }}
                       />
-                      <Box sx={{ ml: 2 }}>
-                        <Typography variant="h6" fontWeight="bold">
+                      <Box className="testimonial-user">
+                        <Typography variant="h6" className="testimonial-name">
                           {testimonial.name}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body2" className="testimonial-role">
                           {testimonial.role}
                         </Typography>
                       </Box>
                     </Box>
-                    <Rating value={testimonial.rating} readOnly precision={0.5} sx={{ mb: 2 }} />
-                    <Typography variant="body1">
+                    <Rating value={testimonial.rating} readOnly precision={0.5} className="testimonial-rating" />
+                    <Typography variant="body1" className="testimonial-text">
                       "{testimonial.text}"
                     </Typography>
                   </Box>
@@ -289,13 +289,13 @@ const Home = () => {
       {/* CTA Section */}
       <Box className="cta-section">
         <Container>
-          <Paper className="cta-container" elevation={3}>
+          <Paper className="cta-container">
             <Grid container spacing={0}>
               <Grid item xs={12} md={8} className="cta-content">
-                <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>
+                <Typography variant="h3" component="h2" className="cta-title">
                   Ready to Experience MyRide?
                 </Typography>
-                <Typography variant="h6" component="div" paragraph>
+                <Typography variant="h6" component="div" className="cta-subtitle">
                   Join thousands of satisfied users who have made MyRide their preferred way to travel.
                 </Typography>
                 <Button 
@@ -304,7 +304,7 @@ const Home = () => {
                   variant="contained" 
                   size="large" 
                   color="primary"
-                  sx={{ px: 4, py: 1.5 }}
+                  className="cta-button"
                 >
                   Sign Up for Free
                 </Button>

@@ -11,8 +11,8 @@
   --secondary-color: #ff4081;
   --text-primary: #212121;
   --text-secondary: #757575;
-  --bg-color: #f5f7fa;
-  --paper-color: #ffffff;
+  /* --bg-color: #f5f7fa;
+  --paper-color: #ffffff; */
   --error-color: #f44336;
   --success-color: #4caf50;
   --border-radius: 8px;
@@ -99,7 +99,7 @@ body {
 /* Form Elements */
  .MuiTextField-root {
   margin-bottom: 16px !important;
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(255, 255, 255, 0.8); */
   border-radius: var(--border-radius);
   overflow: hidden;
   transition: transform var(--transition-speed);

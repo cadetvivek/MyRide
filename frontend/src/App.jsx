@@ -16,7 +16,10 @@ import Register from './pages/Register';
 import UserDashboard from './pages/UserDashboard';
 import DriverDashboard from './pages/DriverDashboard';
 import AdminDashboard from './pages/AdminDashboard';
-import NotFound from './pages/NotFound';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Services from './pages/Services';
+import NotFound from'./pages/NotFound';
 
 import './App.css';
 
@@ -88,6 +91,9 @@ const App = () => {
           />
 
           {/* 404 Page */}
+          <Route path='contact' element={<Contact/>}/>
+          <Route path='about' element={<About/>}/>
+          <Route path='services' element={<Services/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

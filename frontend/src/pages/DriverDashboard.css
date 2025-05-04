@@ -3,7 +3,7 @@
 /* Dashboard Title */
 .dashboard-title {
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--primary-dark);
     margin-bottom: 20px;
     position: relative;
   }
@@ -15,18 +15,20 @@
     left: 0;
     width: 60px;
     height: 4px;
-    background-color: #3f51b5;
+    background-color: var(--primary-color);
     border-radius: 2px;
   }
   
   /* Map Container */
   .map-container {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     transition: all 0.3s ease;
+    border-radius: var(--border-radius);
+    overflow: hidden;
   }
   
   .map-container:hover {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--box-shadow-hover);
   }
   
   /* Buttons */
@@ -34,21 +36,25 @@
     font-weight: 500;
     text-transform: none;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     transition: all 0.2s ease;
+    background-color: var(--primary-color);
+    color: var(--text-light);
   }
   
   .location-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(63, 81, 181, 0.3);
+    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
+    background-color: var(--primary-dark);
   }
   
   .complete-button {
     padding: 12px;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     text-transform: none;
-    background-color: #4caf50;
+    background-color: var(--success-color);
+    color: var(--text-light);
     transition: all 0.2s ease;
   }
   
@@ -61,10 +67,14 @@
   .driver-info-panel, .active-ride-panel, .available-rides-panel {
     transition: all 0.3s ease;
     height: 100%;
+    background-color: var(--paper-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
   }
   
   .driver-info-panel:hover, .active-ride-panel:hover, .available-rides-panel:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow-hover);
   }
   
   /* Status Badges */
@@ -77,31 +87,34 @@
   }
   
   .status-badge.available {
-    background-color: #e3f2fd;
-    color: #2196f3;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
   }
   
   .status-badge.ongoing {
-    background-color: #fff8e1;
-    color: #ffa000;
+    /* background-color: #fff8e1; */
+    color: var(--warning-color);
   }
   
   /* Fare Display */
   .fare-value {
     font-weight: 700;
-    color: #4caf50;
+    color: var(--success-color);
     font-size: 1.2rem;
   }
   
   /* Ride List Items */
   .ride-list-item {
     transition: background-color 0.2s ease;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     margin-bottom: 8px;
+    background-color: var(--paper-color);
+    padding: 12px;
+    box-shadow: var(--box-shadow);
   }
   
   .ride-list-item:hover {
-    background-color: #f5f5f5;
+    background-color: var(--primary-light);
   }
   
   /* Animation for location updates */
@@ -143,5 +156,28 @@
     .status-badge {
       font-size: 0.75rem;
       padding: 4px 10px;
+    }
+    
+    .ride-list-item {
+      padding: 8px;
+    }
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .driver-info-panel, 
+    .active-ride-panel, 
+    .available-rides-panel,
+    .ride-list-item {
+      background-color: var(--paper-color);
+    }
+    
+    .ride-list-item:hover {
+      background-color: rgba(25, 118, 210, 0.1);
+    }
+    
+    .status-badge.available {
+      background-color: rgba(25, 118, 210, 0.2);
+      color: var(--primary-light);
     }
   }

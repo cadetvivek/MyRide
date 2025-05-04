@@ -1,344 +1,144 @@
+/* Navbar.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-/* Base styling */
-
+/* AppBar Styling */
 .navbar {
-  background: linear-gradient(135deg, #4d33ea 0%, #8752f3 100%);
-  box-shadow: 0 4px 20px rgba(77, 51, 234, 0.25);
-  transition: all 0.3s ease;
+  background-color: #1976d2 !important; /* Material UI primary color */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.navbar a {
-  text-decoration: none;
-  transition: all 0.3s ease;
+/* Toolbar Layout */
+.navbar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  min-height: 64px;
 }
 
-/* Toolbar with nice spacing */
-
-.MuiToolbar-root {
-  padding: 0.75rem 1rem;
-}
-
-/* Logo styling */
-
-.navbar .MuiTypography-root[to="/"] {
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  font-weight: 700;
-}
-
-.navbar .MuiSvgIcon-root {
-  color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.navbar:hover .MuiSvgIcon-root {
-  transform: rotate(360deg);
-  transition: transform 0.8s ease;
-}
-
-/* Navigation buttons */
-
-.navbar .MuiButton-root {
-  position: relative;
-  border-radius: 8px;
-  letter-spacing: 0.5px;
-  font-weight: 500;
-  padding: 8px 16px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.navbar .MuiButton-root::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: white;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.navbar .MuiButton-root:hover::before {
-  width: 80%;
-}
-
-.navbar .MuiButton-root:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-/* User menu styling */
-
-.navbar .MuiAvatar-root {
-  border: 2px solid white;
-  transition: all 0.3s ease;
-}
-
-.navbar button:hover .MuiAvatar-root {
-  transform: scale(1.1);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
-}
-
-/* Profile button with animation */
-
-.navbar Button[to="/profile"] {
-  border-radius: 24px;
+/* Logo */
+.logo-container {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
-/* Register button with pulse effect */
-
-.navbar Button[to="/register"] {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 2px solid white;
+.logo-icon {
+  font-size: 32px;
+  color: #fff;
 }
 
-.navbar Button[to="/register"]:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+.logo-text {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* Add ripple animation to buttons */
-
-@keyframes ripple {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
+/* Nav Links Desktop */
+.nav-links-desktop {
+  display: flex;
+  gap: 1rem;
+  margin: 0 16px;
 }
 
-.navbar .MuiButton-root {
-  position: relative;
-  overflow: hidden;
+.nav-button {
+  color: #fff !important;
+  font-weight: 500;
+  text-transform: none;
+  padding: 8px 16px;
 }
 
-.navbar .MuiButton-root::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
+.nav-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
 }
 
-.navbar .MuiButton-root:active::after {
-  animation: ripple 0.6s linear;
+/* User Section */
+.user-menu-desktop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Mobile menu icon animation */
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+}
 
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-transform: none;
+  color: #fff;
+}
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
+/* Login/Register Buttons */
+.login-button, .register-button {
+  margin-left: 0.5rem;
+  text-transform: none;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+  display: none;
+  color: #fff;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  width: 250px;
+  padding: 1rem;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.drawer-logo-icon {
+  color: #1976d2;
+  font-size: 28px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+  .nav-links-desktop {
+    display: none;
   }
-  50% {
-    transform: scale(1.1);
+
+  .user-menu-desktop {
+    display: none;
   }
-  100% {
-    transform: scale(1);
+
+  .mobile-menu-icon {
+    display: block;
   }
-}
 
-.navbar .MuiIconButton-root:hover {
-  animation: pulse 1s infinite;
-}
-
-/* Drawer styling */
-
-.MuiDrawer-paper {
-  background: linear-gradient(135deg, #4d33ea 0%, #8752f3 100%);
-  color: white;
-}
-
-.MuiDrawer-paper .MuiDivider-root {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.MuiDrawer-paper .MuiListItem-root {
-  transition: all 0.3s ease;
-  margin: 4px 8px;
-  border-radius: 8px;
-}
-
-.MuiDrawer-paper .MuiListItem-root:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateX(5px);
-}
-
-.MuiDrawer-paper .MuiSvgIcon-root {
-  color: white;
-}
-
-.MuiDrawer-paper .MuiTypography-root {
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Menu dropdown styling */
-
-.MuiMenu-paper {
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(77, 51, 234, 0.2);
-  overflow: hidden;
-  animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.MuiMenu-paper .MuiMenuItem-root {
-  transition: all 0.2s ease;
-  padding: 12px 16px;
-}
-
-.MuiMenu-paper .MuiMenuItem-root:hover {
-  background-color: rgba(77, 51, 234, 0.08);
-}
-
-.MuiMenu-paper .MuiListItemIcon-root {
-  color: #4d33ea;
-}
-
-/* User menu arrow animation */
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
+  .logo-icon {
+    font-size: 28px;
   }
 }
 
-.navbar button:hover .MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"] {
-  animation: bounce 1s infinite;
-}
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .navbar-toolbar {
+    padding: 0 8px;
+  }
 
-/* Responsive design for smaller screens */
+  .logo-text {
+    font-size: 1.1rem;
+  }
 
-@media (max-width: 768px) {
-  .navbar .MuiToolbar-root {
-    padding: 0.5rem;
+  .mobile-drawer {
+    width: 100%;
   }
 }
 
-/* Smooth slide transition for desktop items when switching from mobile to desktop */
-
-@media (min-width: 900px) {
-  .navbar .MuiBox-root[sx*="display: { xs: 'none', md: 'flex' }"] {
-    animation: fadeIn 0.5s ease;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-}
-
-/* Styling for avatar with badge effect */
-
-.navbar .MuiAvatar-root {
-  background-color: #fff;
-  color: #4d33ea;
-  position: relative;
-}
-
-/* Elevate navbar on scroll - to be controlled with JavaScript */
-
-.navbar-scrolled {
-  background: linear-gradient(135deg, #3c28c7 0%, #7043e8 100%);
-  padding: 0.5rem 0;
-}
-
-/* Add a nice shadow when the menu is open */
-
-.menu-open .navbar {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Animation for logo text */
-
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  }
-  100% {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  }
-}
-
-.navbar:hover .MuiTypography-root[to="/"] {
-  animation: glow 2s infinite;
-}
-
-/* Container animation for smooth resizing */
-
-.MuiContainer-root {
-  transition: all 0.3s ease;
-}
-
-/* Add active state for current page */
-
-.active-link {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.15) !important;
-}
-
-.active-link::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  width: 80% !important;
-  height: 2px;
-  background-color: white;
-}
-
-/* Mobile menu open animation */
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.MuiDrawer-paper {
-  animation: slideDown 0.3s ease;
-} 

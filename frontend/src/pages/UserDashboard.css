@@ -1,33 +1,8 @@
-
-
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* CSS Variables for consistent theming */
 
- /* :root {
-  --primary-color: #3f51b5;
-  --primary-light: #757de8;
-  --primary-dark: #002984;
-  --secondary-color: #ff4081;
-  --secondary-light: #ff79b0;
-  --secondary-dark: #c60055;
-  --success-color: #4caf50;
-  --success-light: #80e27e;
-  --error-color: #f44336;
-  --warning-color: #ff9800;
-  --info-color: #2196f3;
-  --text-primary: #212121;
-  --text-secondary: #757575;
-  --text-light: #ffffff;
-  --bg-color: #f5f7fa;
-  --paper-color: #ffffff;
-  --card-color: #f9f9f9;
-  --border-radius: 8px;
-  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --box-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
-  --transition-speed: 0.3s;
-}  */
 
 
 /* Reset and Base Styles */

@@ -1,62 +1,127 @@
 /* src/components/Footer.css */
+
+/* General styling */
 .footer {
-    background-color: #f8f9fa;
-    padding-top: 4rem;
-    margin-top: 3rem;
-    color: #333;
+  background-color: silver;
+  padding: 40px 0 20px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  margin-right: 8px;
+  color: #1976d2;
+}
+
+.brand-name {
+  font-weight: bold;
+}
+
+.brand-description {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.footer-heading {
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links li a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #1976d2;
+}
+
+/* Social icons */
+.social-icons .MuiIconButton-root {
+  margin-right: 8px;
+  color: #1976d2;
+  transition: transform 0.2s;
+}
+
+.social-icons .MuiIconButton-root:hover {
+  transform: scale(1.2);
+}
+
+/* Contact info */
+.contact-info {
+  margin-top: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-icon {
+  color: #1976d2;
+  margin-right: 8px;
+}
+
+.contact-info a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #1976d2;
+}
+
+/* Divider */
+.footer-divider {
+  margin: 30px 0;
+}
+
+/* Bottom section */
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
   }
-  
-  .footer-brand {
-    margin-bottom: 1.5rem;
+
+  .footer-logo {
+    justify-content: center;
   }
-  
-  .social-icons {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-  
+
   .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: inline-block;
+    text-align: left;
   }
-  
-  .footer-links li {
-    margin-bottom: 0.75rem;
-  }
-  
-  .footer-links li a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-links li a:hover {
-    color: #1976d2;
-    text-decoration: underline;
-  }
-  
+
   .contact-info {
-    margin-top: 0.5rem;
+    display: inline-block;
+    text-align: left;
   }
-  
-  .copyright {
-    font-size: 0.875rem;
-  }
-  
-  @media (max-width: 600px) {
-    .footer {
-      padding-top: 2rem;
-      text-align: center;
-    }
-    
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .social-icons {
-      justify-content: center;
-    }
-  }
+}

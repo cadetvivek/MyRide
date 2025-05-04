@@ -8,7 +8,7 @@ import {
   InputLabel, Alert, CircularProgress 
 } from '@mui/material';
 import { DirectionsCar } from '@mui/icons-material';
-import './Register.css'
+// import './Register.css'
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
