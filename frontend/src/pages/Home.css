@@ -1,0 +1,181 @@
+/* src/pages/Home.css */
+.home-page {
+  --primary-color: #1976d2;
+  --primary-light: #e3f2fd;
+  --primary-dark: #1565c0;
+  --text-primary: #212121;
+  --text-secondary: #666666;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section */
+.features-section {
+  padding: 5rem 0;
+}
+
+.feature-card {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-light);
+  border-radius: 50%;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.step-box {
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.step-box:hover {
+  transform: translateY(-10px);
+}
+
+.step-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 5rem 0;
+}
+
+.testimonial-card {
+  height: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 5rem 0;
+}
+
+.cta-container {
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+  position: relative;
+}
+
+.cta-content {
+  padding: 3rem;
+}
+
+.cta-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-light);
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.cta-icon {
+  font-size: 10rem;
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+  .hero-section, .features-section, .how-it-works-section, .testimonials-section, .cta-section {
+    padding: 3rem 0;
+  }
+  
+  .hero-image-container {
+    margin-top: 2rem;
+  }
+  
+  .cta-image-container {
+    min-height: 200px;
+  }
+  
+  .cta-icon {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .step-box {
+    padding: 1.5rem;
+  }
+  
+  .cta-content {
+    padding: 2rem;
+  }
+  
+  .cta-image-container {
+    min-height: 150px;
+  }
+  
+  .cta-icon {
+    font-size: 4rem;
+  }
+}

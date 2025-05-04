@@ -1,0 +1,147 @@
+/* src/pages/DriverDashboard.css */
+
+/* Dashboard Title */
+.dashboard-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .dashboard-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #3f51b5;
+    border-radius: 2px;
+  }
+  
+  /* Map Container */
+  .map-container {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .map-container:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Buttons */
+  .location-button {
+    font-weight: 500;
+    text-transform: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .location-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(63, 81, 181, 0.3);
+  }
+  
+  .complete-button {
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-transform: none;
+    background-color: #4caf50;
+    transition: all 0.2s ease;
+  }
+  
+  .complete-button:hover {
+    background-color: #388e3c;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  }
+  
+  /* Info Panels */
+  .driver-info-panel, .active-ride-panel, .available-rides-panel {
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+  
+  .driver-info-panel:hover, .active-ride-panel:hover, .available-rides-panel:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Status Badges */
+  .status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .status-badge.available {
+    background-color: #e3f2fd;
+    color: #2196f3;
+  }
+  
+  .status-badge.ongoing {
+    background-color: #fff8e1;
+    color: #ffa000;
+  }
+  
+  /* Fare Display */
+  .fare-value {
+    font-weight: 700;
+    color: #4caf50;
+    font-size: 1.2rem;
+  }
+  
+  /* Ride List Items */
+  .ride-list-item {
+    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .ride-list-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Animation for location updates */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .leaflet-marker-icon {
+    transition: all 0.3s ease;
+  }
+  
+  .leaflet-marker-icon:hover {
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 960px) {
+    .map-container {
+      height: 400px !important;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .dashboard-title {
+      font-size: 1.5rem;
+    }
+    
+    .status-badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+    }
+  }

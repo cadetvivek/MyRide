@@ -1,0 +1,452 @@
+/* AdminDashboard.css */
+/* Modern Admin Dashboard styling with animations and responsive design */
+
+/* Global Styles & Variables */
+:root {
+    --primary: #3f51b5;
+    --primary-light: #757de8;
+    --primary-dark: #002984;
+    --secondary: #f50057;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --error: #f44336;
+    --gray-light: #f5f5f5;
+    --gray: #e0e0e0;
+    --gray-dark: #757575;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.14);
+    --transition: all 0.3s ease;
+    --border-radius: 8px;
+  }
+  
+  /* Base layout */
+  
+  .admin-dashboard {
+    min-height: 100vh;
+    background-color: #f9fafc;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+  }
+  
+  /* Dashboard Header */
+  .dashboard-header {
+    position: relative;
+    padding-bottom: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .dashboard-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dashboard-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 2px;
+  }
+  
+  .dashboard-subtitle {
+    margin-top: 16px;
+    opacity: 0.85;
+  }
+  
+  /* Status Alerts */
+  .status-alert {
+    border-radius: var(--border-radius);
+    animation: slideDown 0.5s ease-out;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* Stats Cards */
+  .stats-container {
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    border: none;
+  }
+  
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .user-stat::before {
+    background: linear-gradient(90deg, #3949ab, #5c6bc0);
+  }
+  
+  .driver-stat::before {
+    background: linear-gradient(90deg, #00897b, #4db6ac);
+  }
+  
+  .ride-stat::before {
+    background: linear-gradient(90deg, #f57c00, #ffb74d);
+  }
+  
+  .revenue-stat::before {
+    background: linear-gradient(90deg, #388e3c, #66bb6a);
+  }
+  
+  .stat-value {
+    font-weight: 700 !important;
+    margin-top: 8px !important;
+    font-size: 2rem !important;
+    letter-spacing: -0.5px;
+  }
+  
+  /* Main Panel */
+  .main-panel {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    animation: fadeUp 0.7s ease-out;
+  }
+  
+  .tab-header {
+    background-color: white;
+    border-bottom: 1px solid var(--gray);
+  }
+  
+  .tab-navigation button {
+    padding: 16px 24px;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .tab-navigation button.Mui-selected {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  
+  .refresh-button {
+    margin-right: 12px;
+    transition: var(--transition);
+  }
+  
+  .refresh-button:hover {
+    background-color: var(--gray-light);
+    transform: rotate(180deg);
+  }
+  
+  /* Loading */
+  .loading-container {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Table Styling */
+  .tab-panel table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tab-panel th {
+    background-color: #f9fafc;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 16px;
+    border-bottom: 2px solid var(--gray);
+  }
+  
+  .tab-panel td {
+    padding: 16px;
+    border-bottom: 1px solid var(--gray);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+  }
+  
+  /* Table Rows */
+  .user-row, .driver-row, .ride-row {
+    transition: var(--transition);
+  }
+  
+  .user-row:hover, .driver-row:hover, .ride-row:hover {
+    background-color: rgba(63, 81, 181, 0.05);
+  }
+  
+  /* Status Chips */
+  .status-chip {
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 80px;
+    justify-content: center;
+  }
+  
+  .status-chip.active,
+  .status-chip.available,
+  .status-chip.status-completed {
+    background-color: rgba(76, 175, 80, 0.15) !important;
+    color: #2e7d32 !important;
+  }
+  
+  .status-chip.blocked,
+  .status-chip.status-cancelled {
+    background-color: rgba(244, 67, 54, 0.15) !important;
+    color: #d32f2f !important;
+  }
+  
+  .status-chip.on-ride,
+  .status-chip.status-pending {
+    background-color: rgba(255, 152, 0, 0.15) !important;
+    color: #ed6c02 !important;
+  }
+  
+  .status-chip.status-in-progress {
+    background-color: rgba(33, 150, 243, 0.15) !important;
+    color: #1976d2 !important;
+  }
+  
+  /* Action Buttons */
+  .action-button {
+    margin: 0 4px;
+    padding: 8px;
+    transition: var(--transition);
+  }
+  
+  .action-button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Animation Keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(63, 81, 181, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(63, 81, 181, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(63, 81, 181, 0);
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1200px) {
+    .stat-value {
+      font-size: 1.75rem !important;
+    }
+  }
+  
+  @media (max-width: 960px) {
+    .tab-navigation button {
+      padding: 12px 16px;
+      font-size: 0.875rem;
+    }
+    
+    .tab-panel td, .tab-panel th {
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stats-container {
+      margin-bottom: 1rem;
+    }
+    
+    .stat-card {
+      margin-bottom: 16px;
+    }
+    
+    .stat-value {
+      font-size: 1.5rem !important;
+    }
+    
+    /* Make tables scrollable on mobile */
+    .tab-panel {
+      overflow-x: auto;
+    }
+    
+    .tab-panel table {
+      min-width: 650px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .dashboard-title {
+      font-size: 1.5rem;
+    }
+    
+    .dashboard-subtitle {
+      font-size: 0.875rem;
+    }
+    
+    .tab-navigation button {
+      padding: 10px 12px;
+      font-size: 0.8125rem;
+      min-width: auto;
+    }
+    
+    .action-button {
+      padding: 6px;
+    }
+    
+    .action-button svg {
+      font-size: 1.125rem;
+    }
+  }
+  
+  /* Additional Animations */
+  /* Pulse animation for refresh button when loading */
+  .refresh-button:disabled {
+    animation: pulse 2s infinite;
+  }
+  
+  /* Fade-in for table rows */
+  .user-row, .driver-row, .ride-row {
+    animation: fadeIn 0.5s ease-in-out;
+    animation-fill-mode: both;
+  }
+  
+  /* Staggered animation for table rows */
+  .user-row:nth-child(2), .driver-row:nth-child(2), .ride-row:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .user-row:nth-child(3), .driver-row:nth-child(3), .ride-row:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .user-row:nth-child(4), .driver-row:nth-child(4), .ride-row:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .user-row:nth-child(5), .driver-row:nth-child(5), .ride-row:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  
+  /* Hover effects for stat cards */
+  .stat-card:hover .stat-value {
+    color: var(--primary);
+    transition: color 0.3s ease;
+  }
+  
+  /* Shine effect on stat cards */
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+      to right, 
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0.0) 100%
+    );
+  }
+  
+  .stat-card:hover::after {
+    opacity: 1;
+    left: 130%;
+    transition: left 0.7s ease-in-out;
+  }
+  
+  /* Focus states for accessibility */
+  button:focus, 
+  .action-button:focus {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+  }
+  
+  /* Dark mode support - can be enabled with a class on the body */
+  .dark-mode .admin-dashboard {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .dark-mode .dashboard-title {
+    color: #ffffff;
+  }
+  
+  .dark-mode .dashboard-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .dark-mode .stat-card,
+  .dark-mode .main-panel,
+  .dark-mode .tab-header {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  .dark-mode .tab-panel th {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-bottom: 2px solid #444444;
+  }
+  
+  .dark-mode .tab-panel td {
+    border-bottom: 1px solid #444444;
+    color: #ffffff;
+  }
+  
+  .dark-mode .user-row:hover, 
+  .dark-mode .driver-row:hover, 
+  .dark-mode .ride-row:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
