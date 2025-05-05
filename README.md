@@ -37,9 +37,6 @@ MyRide is a full-featured ride-sharing web application that connects riders with
 - **Socket.IO Client** – Real-time data syncing
 
 ---
-
-## 📁 Project Structure
-
 MyRide/
 ├── backend/
 │ ├── config/ # Database and app configuration
@@ -66,8 +63,6 @@ MyRide/
 │
 └── README.md # Project documentation
 
-
-
 ---
 
 ## 🛠️ Installation & Setup
@@ -80,7 +75,7 @@ MyRide/
 
 ### 🔙 Backend Setup
 
-```bash
+
 # Clone the repository
 git clone https://github.com/yourusername/MyRide.git
 cd MyRide
